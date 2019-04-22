@@ -203,13 +203,12 @@ resource "azurerm_service_fabric_cluster" "test" {
     }
   }
   
-  # fabric_settings {
-  #   name = "Security"
-  #   parameters = {
-  #     name = "ClusterProtectionLevel"
-  #     value = "EncryptAndSign"
-  #   }
-  # }
+  fabric_settings {
+    name = "Security"
+    parameters = {
+      "ClusterProtectionLevel" = "EncryptAndSign"
+    }
+  }
 
   certificate {
     thumbprint = "91A80082799D0E2AF20ED71CF0852E3E91168DEA"
